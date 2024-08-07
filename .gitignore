@@ -1,0 +1,13 @@
+.vscode
+printf
+mini-printf
+a.out
+coding-style-reports.log
+*.tmp
+vgcore.*
+*.o
+unit_tests
+useful-C-functions
+*.gcda
+*.gcno
+out/
