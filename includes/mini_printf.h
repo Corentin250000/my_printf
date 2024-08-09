@@ -8,6 +8,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdarg.h>
+#include <stdio.h>
 
 #ifndef MINI_PRINTF_H_
     #define MINI_PRINTF_H_
@@ -19,5 +20,9 @@ int my_strlen(char const *str);
 char *my_strdup(char const *str);
 char *int_to_char(unsigned int data);
 char *remove_zeros(char *nb);
+
+int print_int(int nb);
+int action_pourcent(char letter_pourcent, va_list ap);
+int mini_printf(char const *format, ...);
 
 #endif /* MINI_PRINTF_H_ */

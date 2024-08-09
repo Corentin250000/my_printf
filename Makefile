@@ -8,10 +8,12 @@
 SRC	=	src/main.c	\
 		src/mini_printf.c	\
 		src/int_to_char/int_to_char.c	\
+		src/print_str.c	\
 
 SRC_UNIT_TESTS	=	tests/tests.c	\
 					src/mini_printf.c	\
 					src/int_to_char/int_to_char.c	\
+					src/print_str.c	\
 
 OBJ	=	$(SRC:.c=.o)
 
@@ -46,6 +48,7 @@ fclean:	clean
 		rm -f coverage.info
 		rm -f coverage_filtered.info
 		rm -rf out
+		rm -f vgcore.*
 
 re:		fclean all
 
@@ -55,7 +58,7 @@ tests_run: $(OBJ_UNIT_TESTS)
 		lcov --capture --directory . --output-file coverage.info \
 		--ignore-errors mismatch
 		lcov --remove coverage.info '*/tests/*' --output-file \
-		coverage_filtered.info
+		coverage_filtered.info --ignore-errors mismatch
 		genhtml coverage_filtered.info --output-directory out
 
 coding_style:	fclean

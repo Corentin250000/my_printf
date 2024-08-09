@@ -7,7 +7,9 @@ coding-style-reports.log
 vgcore.*
 *.o
 unit_tests
-useful-C-functions
+useful-C-functions/
 *.gcda
 *.gcno
+*.gcov
 out/
+*.info
